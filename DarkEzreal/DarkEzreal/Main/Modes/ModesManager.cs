@@ -5,6 +5,7 @@
     using DarkEzreal.Common;
 
     using LeagueSharp;
+    using LeagueSharp.SDK;
 
     internal class ModesManager
     {
@@ -13,6 +14,12 @@
             if (Config.Player.IsDead)
             {
                 return;
+            }
+
+            var target = SpellsManager.R.GetTarget();
+            if (target != null && Config.RMenu.GetKeyBind("Rkey") && SpellsManager.R.IsReady() && target.IsValidTarget(SpellsManager.R.Range))
+            {
+                SpellsManager.R.Cast(SpellsManager.R.GetPrediction(target).CastPosition);
             }
 
             if (Config.MiscMenu.GetKeyBind("EW") && SpellsManager.E.IsReady() && SpellsManager.W.IsReady() && SpellsManager.E.Instance.ManaCost + SpellsManager.W.Instance.ManaCost < Config.Player.Mana)

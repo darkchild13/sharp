@@ -107,7 +107,6 @@
 
                 var Wc = new Menu("Wc", "Combo Settings");
                 Wc.CreateBool("W", "Use W");
-                Wc.CreateSliderButton("Wallies", "Use W On X Allies", 2, 1, 6);
                 Wc.CreateSliderButton("mana", "W ManaManager", 60);
                 WMenu.Add(Wc);
 

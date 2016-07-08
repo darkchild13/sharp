@@ -24,10 +24,10 @@
             E = new Spell(SpellSlot.E, 475);
             R = new Spell(SpellSlot.R, 3000);
 
-            Q.SetSkillshot(250, 50, 2000, true, SkillshotType.SkillshotLine);
-            W.SetSkillshot(250, 70, 1500, false, SkillshotType.SkillshotLine);
-            E.SetSkillshot(250, 190, int.MaxValue, false, SkillshotType.SkillshotCircle);
-            R.SetSkillshot(1000, 150, 2000, false, SkillshotType.SkillshotLine);
+            Q.SetSkillshot(250, 60, 2000, true, SkillshotType.SkillshotLine);
+            W.SetSkillshot(250, 80, 1500, false, SkillshotType.SkillshotLine);
+            E.SetSkillshot(250, 200, int.MaxValue, false, SkillshotType.SkillshotCircle);
+            R.SetSkillshot(1000, 160, 2000, false, SkillshotType.SkillshotLine);
 
             Spells.Add(Q);
             Spells.Add(W);

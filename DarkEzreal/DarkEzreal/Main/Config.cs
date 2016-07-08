@@ -159,7 +159,7 @@
                 var Rks = new Menu("Rks", "Stealer Settings");
                 Rks.CreateBool("R", "Use R");
                 Rks.CreateSlider("range", "[R] Steal Range (0 = Global)", 4000, 0, 10000);
-                Rks.CreateBool("Rjs", "Steal Jungle Mobs");
+                Rks.CreateBool("Rjs", "Steal Jungle Mobs", false);
                 Rks.CreateBool("Rks", "Steal Champions");
                 RMenu.Add(Rks);
                 RMenu.CreateKeyBind("Rkey", "R HotKey", Keys.S, KeyBindType.Press);

@@ -60,12 +60,12 @@
                 DrawMenu = MenuIni.CreateMenu("DrawMenu", "Drawings Settings");
 
                 var Qhit = new Menu("Qhit", "HitChance Settings");
-                Qhit.Add(new MenuList<string>("hit", "Q HitChance", new string[] { "Very High", "High", "Medium", "Low" }));
+                Qhit.Add(new MenuList<string>("hit", "Q HitChance", new[] { "Low", "Medium", "High", "Very High" }));
                 QMenu.Add(Qhit);
 
                 var Qc = new Menu("Qc", "Combo Settings");
                 Qc.CreateBool("Q", "Use Q");
-                Qc.CreateBool("AQ", "AA > Q");
+                Qc.CreateBool("AQ", "AA > Q", false);
                 Qc.CreateSliderButton("mana", "Q ManaManager");
                 QMenu.Add(Qc);
 
@@ -103,7 +103,7 @@
                 QMenu.Add(Qks);
 
                 var Whit = new Menu("Whit", "HitChance Settings");
-                Whit.Add(new MenuList<string>("hit", "W HitChance", new[] { "Very High", "High", "Medium", "Low" }));
+                Whit.Add(new MenuList<string>("hit", "W HitChance", new[] { "Low", "Medium", "High", "Very High" }));
                 WMenu.Add(Whit);
 
                 var Wc = new Menu("Wc", "Combo Settings");
@@ -142,7 +142,7 @@
                 EMenu.Add(Eks);
 
                 var Rhit = new Menu("Rhit", "HitChance Settings");
-                Rhit.Add(new MenuList<string>("hit", "R HitChance", new string[] { "Very High", "High", "Medium", "Low" }));
+                Rhit.Add(new MenuList<string>("hit", "R HitChance", new string[] { "Low", "Medium", "High", "Very High" }));
                 RMenu.Add(Rhit);
 
                 var Rc = new Menu("Rc", "Combo Settings");

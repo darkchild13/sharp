@@ -20,6 +20,16 @@
             }
         }
 
+        public static void Events_OnGapCloser(object sender, Events.GapCloserEventArgs e)
+        {
+            if (sender == null || e.Sender.IsAlly || e.Sender == null || !SpellsManager.E.IsReady() || !Config.MiscMenu["Egap"])
+            {
+                return;
+            }
+
+            SpellsManager.E.Cast(Config.Player.ServerPosition.Extend(e.Sender.ServerPosition, -SpellsManager.E.Range));
+        }
+
         public static void ObjAiBaseOnOnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
             if (!sender.IsMe || sender == null || args.Slot != SpellSlot.W)

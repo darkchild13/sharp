@@ -6,6 +6,7 @@
     using DarkEzreal.Common;
 
     using LeagueSharp;
+    using LeagueSharp.SDK;
     using LeagueSharp.SDK.Enumerations;
     using LeagueSharp.SDK.UI;
 
@@ -180,6 +181,7 @@
                 MiscMenu.Add(stealer);
                 MiscMenu.CreateBool("hooks", "Anti Hooks");
                 MiscMenu.CreateKeyBind("EW", "E > W KeyBind", Keys.A, KeyBindType.Press);
+                MiscMenu.CreateBool("Egap", "Anti GapClosers");
 
                 foreach (var spell in SpellsManager.Spells)
                 {
@@ -190,6 +192,7 @@
                 Drawing.OnDraw += EventsHandler.Drawing_OnDraw;
                 Obj_AI_Base.OnProcessSpellCast += EventsHandler.ObjAiBaseOnOnProcessSpellCast;
                 Obj_AI_Base.OnBuffAdd += EventsHandler.Obj_AI_Base_OnBuffAdd;
+                Events.OnGapCloser += EventsHandler.Events_OnGapCloser;
                 return true;
             }
             catch (Exception e)

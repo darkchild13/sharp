@@ -34,50 +34,5 @@
             Spells.Add(E);
             Spells.Add(R);
         }
-
-        public static void QCast(this Obj_AI_Base target, Menu menu)
-        {
-            if (target == null || !Q.IsReady() || !target.IsValidTarget(Q.Range))
-            {
-                return;
-            }
-
-            var pred = Q.GetPrediction(target);
-            if (pred.Hitchance >= Q.hitchance(menu))
-            {
-                Q.Cast(pred.CastPosition);
-            }
-        }
-
-        public static void WCast(this Obj_AI_Base target, Menu menu)
-        {
-            if (target == null || !W.IsReady() || !target.IsValidTarget(W.Range))
-            {
-                return;
-            }
-
-            var pred = W.GetPrediction(target);
-            if (pred.Hitchance >= W.hitchance(menu))
-            {
-                W.Cast(pred.CastPosition);
-            }
-        }
-
-        public static void ECast(this Obj_AI_Base target, Menu menu, bool safe = false)
-        {
-            if (target == null || !E.IsReady() || !target.IsValidTarget(E.Range))
-            {
-                return;
-            }
-
-            var pred = E.GetPrediction(target);
-            if (pred.Hitchance >= E.hitchance(menu))
-            {
-                var ally =
-                    GameObjects.Ally.OrderByDescending(a => a.CountAllyHeroesInRange(1000))
-                        .FirstOrDefault(a => a.IsValidTarget(1000) && !a.IsMe && a.Distance(target) <= Config.Player.GetRealAutoAttackRange());
-                E.Cast(ally != null && menu["ES"] && ally.SafetyManager(menu) ? pred.CastPosition.Extend(ally.ServerPosition, 475) : pred.CastPosition);
-            }
-        }
     }
 }

@@ -21,22 +21,22 @@
             {
                 case 0:
                     {
-                        return HitChance.VeryHigh;
+                        return HitChance.Low;
                     }
 
                 case 1:
                     {
-                        return HitChance.High;
+                        return HitChance.Medium;
                     }
 
                 case 2:
                     {
-                        return HitChance.Medium;
+                        return HitChance.High;
                     }
 
                 case 3:
                     {
-                        return HitChance.Low;
+                        return HitChance.VeryHigh;
                     }
             }
 

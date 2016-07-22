@@ -65,7 +65,7 @@
 
         public static int TravelTime(this Spell spell, Obj_AI_Base target)
         {
-            return (int)((target.DistanceToPlayer() / spell.Speed) + (Math.Abs(spell.Delay + Game.Ping) / 2));
+            return (int)(((target.DistanceToPlayer() / spell.Speed) * 1000) + (Math.Abs(spell.Delay + Game.Ping) / 2));
         }
 
         public static bool IsKillable(this Obj_AI_Base target, Spell spell)
@@ -97,7 +97,7 @@
         {
             get
             {
-                return Variables.Orbwalker.GetActiveMode().HasFlag(OrbwalkingMode.Combo);
+                return Variables.Orbwalker.ActiveMode.HasFlag(OrbwalkingMode.Combo);
             }
         }
 
@@ -105,7 +105,7 @@
         {
             get
             {
-                return Variables.Orbwalker.GetActiveMode().HasFlag(OrbwalkingMode.Hybrid);
+                return Variables.Orbwalker.ActiveMode.HasFlag(OrbwalkingMode.Hybrid);
             }
         }
 
@@ -113,7 +113,7 @@
         {
             get
             {
-                return Variables.Orbwalker.GetActiveMode().HasFlag(OrbwalkingMode.LastHit);
+                return Variables.Orbwalker.ActiveMode.HasFlag(OrbwalkingMode.LastHit);
             }
         }
 
@@ -121,7 +121,7 @@
         {
             get
             {
-                return Variables.Orbwalker.GetActiveMode().HasFlag(OrbwalkingMode.LaneClear);
+                return Variables.Orbwalker.ActiveMode.HasFlag(OrbwalkingMode.LaneClear);
             }
         }
     }
